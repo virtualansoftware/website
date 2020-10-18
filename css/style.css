@@ -848,7 +848,7 @@
   #homebanner
 	{
 		position: relative;
-		padding: 14em 0em;
+		padding: 6em 0em;
 		background: url(../images/banner-home.jpg) no-repeat center;
 		background-size: cover;
 		color: #fff;
@@ -858,7 +858,7 @@
   #consultbanner
 	{
 		position: relative;
-		padding: 14em 0em;
+		padding: 13em 0em;
 		background: url(../images/banner-consult.jpg) no-repeat center;
 		background-size: cover;
 		color: #fff;
@@ -867,7 +867,7 @@
   #cloudbanner
   {
   		position: relative;
-  		padding: 14em 0em;
+  		padding: 13em 0em;
   		background: url(../images/banner-cloud.jpg) no-repeat center;
   		background-size: cover;
   		color: #fff;
@@ -875,7 +875,7 @@
 	#digitbanner
 	{
   		position: relative;
-  		padding: 14em 0em;
+  		padding: 13em 0em;
   		background: url(../images/banner-digit.jpg) no-repeat center;
   		background-size: cover;
   		color: #fff;
@@ -884,7 +884,7 @@
   #qualitybanner
 	{
 		position: relative;
-		padding: 14em 0em;
+		padding: 13em 0em;
 		background: url(../images/banner-quality.jpg) no-repeat center;
 		background-size: cover;
 		color: #fff;
@@ -893,7 +893,7 @@
 	#banner
 	{
 		position: relative;
-		padding: 14em 0em;
+		padding: 13em 0em;
 		background: url(../images/banner-home.jpg) no-repeat center;
 		background-size: cover;
 		color: #fff;
