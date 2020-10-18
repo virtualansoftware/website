@@ -178,10 +178,25 @@
 		padding: 6em 0em;
 	}
 
-  #consultbanner #qualitybanner #digitbanner #cloudbanner
+  #consultbanner
 	{
 		padding: 6em 0em;
 	}
+
+	#qualitybanner
+  	{
+  		padding: 6em 0em;
+  	}
+
+  #digitbanner
+  {
+    padding: 6em 0em;
+  }
+
+  #cloudbanner
+  {
+    padding: 6em 0em;
+  }
 
 	#homebanner
 	{
