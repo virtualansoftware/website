@@ -28,7 +28,45 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-	</head>
+
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+			<script data-cfasync="false" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		</head>
+
+		<style>
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.border-form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
 	<body class="no-sidebar">
 
 	<!-- Header -->
@@ -93,13 +131,99 @@
 									</span>
 								<br/>
 							</header>
-							<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeB_eWSGethieHTAjME5H9Ix1d1Sh2G5C4KjxlKsivDYqbYxA/viewform?embedded=true" width="640" height="1114" frameborder="0" marginheight="0" marginwidth="0" onload="window.parent.scrollTo(0,0)">Loading…</iframe>					</div>
+						</section>
+					</div>
 
+					<div class="9u skel-cell-important border-form">
+						<section>
+							<header>
+							<h2>Contact Form:</h2>
+							</header>
+							<form id="Contact-Form">
+									<p><label for="FirstName">FirstName:</label><br>
+										<input id="FirstName" name="FirstName" type="text" value="" placeholder="Your name.."></p>
+									<p><label for="LastName">LastName:</label><br>
+										<input id="LastName" name="LastName" type="text" value=""></p>
+									<p><label for="CompanyName">CompanyName:</label>
+										<input id="CompanyName" name="CompanyName" type="text" value=""></p>
+									<p><label for="EmailAddress">EmailAddress:</label>
+										<input id="EmailAddress" name="EmailAddress" type="text" value=""></p>
+									<p><label for="Address">Address:</label>
+										<input id="Address" name="Address" type="text" value=""></p>
+									<p><label for="PhoneNumber">PhoneNumber:</label><br>
+										<input id="PhoneNumber" name="PhoneNumber" type="text" value=""></p>
+									<p><label for="Message">Message:</label><br>
+										<textarea id="Message" name="Message" cols="40"></textarea></p>
+									<input type="submit" value="Send">
+								</form>
+
+							<p id="result" style=" border-style: solid; border-color: green; font-size: 1.2 em;"></p>
+						</section>
 				</div>
 			</div>
+			</div>
 			<!-- Main -->
+				<script data-cfasync="false" type="text/javascript">
+jQuery( document ).ready(function( $ ) {
+	// variable to hold request
+	var request;
+	// bind to the submit event of our form
+	$("#Contact-Form").submit(function(event){
+		// abort any pending request
+		if (request) {
+			request.abort();
+		}
+		// setup some local variables
+		var $form = $(this);
+		// let's select and cache all the fields
+		var $inputs = $form.find("input, select, button, textarea");
+		// serialize the data in the form
+		var serializedData = $form.serialize();
 
-		</div>
+		// let's disable the inputs for the duration of the ajax request
+		// Note: we disable elements AFTER the form data has been serialized.
+		// Disabled form elements will not be serialized.
+		$inputs.prop("disabled", true);
+		$('#result').text('Sending data...');
+
+		// fire off the request to /form.php
+		request = $.ajax({
+			url: "https://script.google.com/macros/s/AKfycbxMQcOLu8Fa-7IV53Dy1RvTqObtCd3f0t7dPohdTQ/exec",
+			type: "post",
+			data: serializedData
+		});
+
+		// callback handler that will be called on success
+		request.done(function (response, textStatus, jqXHR){
+			// log a message to the console
+			$('#result').html('Thanks for contacting us, will get back to you shortly!');
+
+			$("#Contact-Form")[0].reset();
+
+		});
+
+		// callback handler that will be called on failure
+		request.fail(function (jqXHR, textStatus, errorThrown){
+			// log the error to the console
+			console.error(
+				"The following error occured: "+
+				textStatus, errorThrown
+			);
+		});
+
+		// callback handler that will be called regardless
+		// if the request failed or succeeded
+		request.always(function () {
+			// reenable the inputs
+			$inputs.prop("disabled", false);
+		});
+
+		// prevent default posting of form
+		event.preventDefault();
+	});
+});
+</script>
+</div>
 	<!-- /Main -->
 
 	<!-- Featured -->
