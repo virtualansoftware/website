@@ -890,6 +890,15 @@
 		color: #fff;
 	}
 
+ #banneraboutus
+	{
+		position: relative;
+		padding: 13em 0em;
+		background: url(../images/banner-about-us.jpg) no-repeat center;
+		background-size: cover;
+		color: #fff;
+	}
+
 	#banner
 	{
 		position: relative;
