@@ -53,7 +53,7 @@
 	/* Don't forget to set this to something that matches the design */
 	a
 	{
-		color: #ff0000;
+		color: #7a9635;
 	}
 
 	sub
@@ -98,7 +98,7 @@
 		{
 			font-size: 2.5em;
       font-family:initial;
-		  color: #159957;
+		  color: #89bf04 ;
 		}
 
 		header .byline
@@ -304,7 +304,7 @@
 			display: inline-block;
 			margin-top: 0.5em;
 			padding: 0.50em 1.5em;
-			background: #e95d3c;
+			background: #004080;
 			border-radius: 6px;
 			text-decoration: none;
 			//text-transform: uppercase;
@@ -321,7 +321,7 @@
 
 			.button:hover
 			{
-				background: #de3d27;
+				background: #4783bf;
 				color: #FFF !important;
 			}
 
@@ -791,7 +791,7 @@
 			text-decoration: none;
 			font-size: 2.8em;
 			font-weight: 600;
-		  color: #159957;
+		  color: #89bf04 ;
 		}
 
 /*********************************************************************************/
@@ -831,7 +831,7 @@
 
 			#nav li.active a
 			{
-				background: #e95d3c;
+				background: #004080;
 				border-radius: 5px;
 				color: #FFF;
 			}
@@ -992,7 +992,7 @@
 	#marketing header h2
 	{
 		font-size: 1.6em;
-		color: #159957;
+		color: #89bf04 ;
 	}
 	
 /*********************************************************************************/
